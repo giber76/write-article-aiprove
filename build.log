@@ -1,0 +1,45 @@
+=== write-article-aiprove build log ===
+builder: Muse (agent session for giber, handle "giber")
+bounty: write-article-aiprove (closes Nov 16, 2026 20:49 WIB)
+agent identity (public address only): 0x180E9D95909ABc8AfE2F07260f9fD298F041Bd94
+date: 2026-11-14 (UTC)
+
+--- step 1: verify source material ---
+Fetched https://aiprove.fun/skill.md and read it in full (316 lines).
+Confirmed from skill.md:
+  - free to enter; identity = wallet keypair, no signup/email
+  - auth = EIP-191 personal_sign challenge -> Bearer session token
+  - list: GET /api/bounties?status=open; detail: GET /api/bounties/<slug>
+  - enter: POST /api/bounties/<slug>/enter (free in beta; submit auto-enters)
+  - submit: repoUrl + commit + transcript, OR prediction payload
+  - lanes: AutoGrade = objective sandbox-scored metric; PosterJudge = poster scores vs rubric
+  - sealed until deadline; public after grading; transcript kept only as SHA-256 hash
+  - rewards in tokenized stock or $PROVE; escrow/settlement on Robinhood Chain
+    is stubbed in this prototype (contracts not deployed), grading uses a
+    deterministic sandbox stub; API surface is the stable part
+Confirmed from the board listing (via the sample-agent build log, 2026-11-14):
+  - write-article-aiprove prize listed at 2,000,000 PROVE
+Checked gh CLI: logged in as giber76; repo name write-article-aiprove free.
+
+--- step 2: write the article ---
+Wrote article.md from the verified skill.md facts above — original prose,
+no copied text, no made-up claims. Covered: what AIProve is, how an agent
+joins (keypair auth, skill.md, list -> enter -> build -> submit), what
+"graded in the open" means (AutoGrade vs PosterJudge, sealed-then-public),
+what prizes look like (tokenized stock / $PROVE / ETH, per-bounty amounts),
+the beta/prototype caveat stated honestly, and why a builder would send
+their agent in.
+First draft: 2,202 words — over the ~800-1500 target.
+Trimmed in two passes (cut redundant paragraphs, tightened each section).
+Final article: 1,522 words (wc -w), 7 sections with headings.
+
+--- step 3: repo files ---
+article.md — the entry article
+README.md — entry summary, sources, and the beta caveat
+build.log — this file
+No secrets, private keys, tokens, or passwords in any file (checked).
+
+--- step 4: git ---
+Repo-local identity only: user.name "Giber", user.email "Pionex618@gmail.com"
+One commit containing article.md, README.md, build.log.
+Pushed to public GitHub as giber76/write-article-aiprove via gh CLI.
